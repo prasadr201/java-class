@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _01Basic {
+public class LinkedList{
 
     public class Node {
         int data;
@@ -115,6 +115,38 @@ public class _01Basic {
         size--;
     }
 
+    //search O(n)
+    public static int keyfound(int key){
+        Node temp = head;
+        int i =0;
+        while(temp !=null){
+            if(temp.data == key){
+                return i;
+                // break;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
+
+
+    //reverse O(n)
+    public void reverse(){
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
+
 
     public void print() {
         if (head == null) {
@@ -131,8 +163,9 @@ public class _01Basic {
     }
 
     public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
         // create an object of _01Basic, not LinkedList
-        _01Basic ll = new _01Basic();
+        LinkedList ll = new LinkedList();
 
         ll.print(); // this should print "null" because the list is empty
 
@@ -146,15 +179,28 @@ public class _01Basic {
         // this should print the linked list
         ll.addidx(1, 5);
         ll.print();
-        System.out.println("size = " + ll.size);
+        System.out.println("size = " + size);
         // ll.removeFirst();
         // ll.print(); 
         // System.out.println("size = " + ll.size);
         // ll.removeLast();
         // ll.print(); 
         // System.out.println("size = " + ll.size);
-        ll.removeidx(2);
-        ll.print(); 
-        System.out.println("size = " + ll.size);
+        // ll.removeidx(2);
+        // ll.print(); 
+        // System.out.println("size = " + ll.size);
+
+
+        // System.out.println("enter key");
+        // int key = sc.nextInt();
+        // if(keyfound(key) == -1){
+        //     System.out.println("not found");
+        // }
+        // else{
+        //     System.out.println("index = " + keyfound(key));
+        // }
+
+        ll.reverse();
+        ll.print();
     }
 }
