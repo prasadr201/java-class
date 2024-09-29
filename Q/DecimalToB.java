@@ -13,7 +13,6 @@ public class DecimalToB{
             System.out.print(s.peek() + " ");
             s.pop();
         }
-
         System.out.println();
     }
 }
