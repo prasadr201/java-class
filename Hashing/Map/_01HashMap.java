@@ -1,12 +1,14 @@
 //Map -> take input in 'pair' form (key, value)
-// give output => unorderd
 /* Operation => O(1)
  * 1. put(key,value)   2. get(key)  3.containsKey(key) => (is present)   4.remove(key)
  */
 
 //1.hash Map
+//2. give output => unorderd
+//3. Data Structure => LinkedList
+//4. form of Array of LinkedList
 import java.util.*;
-public class _01Basic{
+public class _01HashMap{
     public static void main(String[] args) {
         HashMap<String,Integer> hm = new HashMap<>();
         hm.put("india",30);
