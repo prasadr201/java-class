@@ -115,6 +115,23 @@ public class _01Basic{
 
 
 
+
+    //height of the tree  => we find the height of the child node and then return the maximum of left and right and then add 1
+    public static int height(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int lh = height(root.left);  //calculate the left height
+        int rh = height(root.right); //calculate the right height
+
+        return Math.max(lh, rh)+1;
+    }
+
+
+
+
+
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int node[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
@@ -133,5 +150,7 @@ public class _01Basic{
 
         levelOrder(root);
         System.out.println();
+
+        System.out.println("height of the tree is = " + height(root));
     }
 }
