@@ -22,3 +22,26 @@ Java has some special keywords that can help us handle exceptions. These keyword
 2. The "catch" keyword is used to catch the exception and handle it in a specific way.
 3. finally, the "finally" keyword is used to execute code whether or not an exception was thrown.
   */
+
+
+  // Submit to check the output
+import java.util.*;
+
+class _01 {
+    public static void main(String[] args) {
+        try {
+            // Some code that might throw an exception
+            String str = null;
+            System.out.println(str.length());
+        }
+        catch (NumberFormatException e) {
+            System.out.println("A number format exception occurred: " + e.getMessage());
+        }
+        catch (NullPointerException e) {
+            System.out.println("A null pointer exception occurred: " + e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
