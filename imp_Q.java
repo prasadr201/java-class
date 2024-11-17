@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main{
+public class imp_Q{
     public static String removeNonAlphabetic(String s1) {
         if (s1 == null) {
             return null; // Handle null input
