@@ -38,7 +38,7 @@ public class _01HashMap{
         Set<String> key1 = hm.keySet();
         for(String k: key1){
             // System.out.println(k);  Or for values 
-            System.out.println(k + "  , value = " + hm.get(k));
+            System.out.println(/*k + "  , value = " + */hm.get(k));
             
         }
 
