@@ -16,6 +16,24 @@
 import java.util.*;
 
 class _01_Datatype {
+
+    //find a specific pricision value in the double
+    public static double areaSwitchCase(int ch, double []a) {
+        // Write your code here
+        double area = 0;
+        double pi = 3.14159265359;
+        switch(ch){
+            case 1:
+            area= pi*a[0]*a[0];
+            break;
+            case 2:
+            area =  a[0]*a[1];
+            break;
+        }        return Double.parseDouble(String.format("%.5f", area));
+    }
+
+
+
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
 
