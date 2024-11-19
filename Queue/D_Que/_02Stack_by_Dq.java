@@ -1,6 +1,6 @@
 import java.util.*;
-public class Linked{
-    public static class Queue{
+public class _02Stack_by_Dq{
+    public static class Stack{
         static Deque<Integer> deque = new LinkedList<>();
 
         public boolean isEmpty(){
@@ -17,8 +17,8 @@ public class Linked{
                 return -1;
             }
 
-            int top = deque.peekFirst();
-            deque.removeFirst();
+            int top = deque.peekLast();
+            deque.removeLast();
             return top;
         }
 
@@ -28,14 +28,14 @@ public class Linked{
                 return -1;
             }
 
-            return deque.peekFirst();
+            return deque.peekLast();
         }
 
 
     }
 
     public static void main(String args[]){
-        Queue s = new Queue();
+        Stack s = new Stack();
         s.add(1);
         s.add(2);
         s.add(3);

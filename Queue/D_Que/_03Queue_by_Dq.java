@@ -1,5 +1,5 @@
 import java.util.*;
-public class Linked{
+public class _03Queue_by_Dq{
     public static class Queue{
         static Deque<Integer> deque = new LinkedList<>();
 
