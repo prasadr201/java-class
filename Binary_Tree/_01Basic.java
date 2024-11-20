@@ -37,9 +37,8 @@ public class _01Basic{
 
             return newNode;
         }
-    }
 
-    //print in inorder
+        //print in inorder
     public static void preorder(Node root){
         if(root == null){
             return;
@@ -113,9 +112,6 @@ public class _01Basic{
         }
     }
 
-
-
-
     //height of the tree  => we find the height of the child node and then return the maximum of left and right and then add 1
     public static int height(Node root){
         if(root == null){
@@ -128,10 +124,42 @@ public class _01Basic{
         return Math.max(lh, rh)+1;
     }
 
+    //count the no. of nodes in the tree
+    public static int count(Node root){
+        if(root == null){
+            return 0;
+        }
 
+        int lc = count(root.left);
+        int rc = count(root.right);
+        return (lc + rc)+1;
+    }
 
+    
+    public static int sum(Node root){
+        if(root == null){
+            return 0;
+        }
 
+        int lc = sum(root.left);
+        int rc = sum(root.right);
+        return root.data+lc+rc;
+    }
 
+    public static void kLevelData(Node root, int level , int k){
+        if(root == null){
+            return;
+        }
+        if(level == k){
+            System.out.print(root.data + " ");
+        }
+
+        kLevelData(root.left, level+1, k);
+        kLevelData(root.right, level+1, k);
+    }
+}
+
+    
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int node[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
@@ -139,18 +167,28 @@ public class _01Basic{
         Node root = tree.binaryTree(node);
         // System.out.println(root.data);
 
-        preorder(root);
+        tree.preorder(root);
         System.out.println();
 
-        inorder(root);
+        tree.inorder(root);
         System.out.println();
 
-        postorder(root);
+        tree.postorder(root);
         System.out.println();
 
-        levelOrder(root);
+        tree.levelOrder(root);
         System.out.println();
 
-        System.out.println("height of the tree is = " + height(root));
+        System.out.println("height of the tree is = " + tree.height(root));
+        
+        System.out.println("no. of nodes in the tree = " + tree.count(root));
+
+        System.out.print("sum of nodes in the tree = " + tree.sum(root));
+
+        
+        System.out.println("sum of nodes in the tree = " );
+        tree.kLevelData(root,1,3);
+        System.out.println();
+
     }
 }
