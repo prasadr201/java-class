@@ -1,5 +1,5 @@
 import java.util.*;
-public class Linked{
+public class _03leefPath{
 
     public static class Node{
         int data;
