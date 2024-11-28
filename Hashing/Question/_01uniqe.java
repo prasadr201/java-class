@@ -1,6 +1,5 @@
 import java.util.*;
-public class NonUse{
-
+public class _01uniqe{
    public static int total(String s){
       Map<Character,Integer> hm = new HashMap<>();
       int count = 1;
