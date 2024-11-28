@@ -31,12 +31,29 @@ public class _01Basic{
             curr = curr.child[idx];
 
         }
+        curr.endOfWord = true;
+    }
+
+    public static boolean search(String s){
+        Node curr = root;
+
+        for(int i=0; i<s.length(); i++){
+            int idx = s.charAt(i)-'a';
+            if(curr.child[idx] == null){
+                return false;
+            }
+            curr = curr.child[idx];
+        }
+
+        return curr.endOfWord == true;
     }
 
     public static void main(String[] args) {
-        String words[] = {"three", "the", "a", "their", "any"};
+        String words[] = {"three", "the", "a","there", "their", "any"};
         for(int i =0; i<words.length; i++){
             insert(words[i]);
         }
+        System.out.println(search("any"));
+        System.out.println(search("there"));
     }
 }
